@@ -1,46 +1,64 @@
-# Getting Started with Create React App
+## Quick Start
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. create `.env` file and add necessary configuration, you can look up the configuration sample on `.env.defaults` file
 
-## Available Scripts
+1. install dependency
 
-In the project directory, you can run:
+    ```bash
+    npm install
+    ```
 
-### `npm start`
+1. build and run
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    ```bash
+    npm run build
+    npm start
+    ```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Development
 
-### `npm test`
+This project is build using this technology stacks
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. [NodeJS](https://nodejs.org/) 14 > as runtime
+1. [Typescript](https://www.typescriptlang.org/) as main language
+1. [Gatsby](https://www.gatsbyjs.com/) as static web frameworks
+1. [Prismic](https://prismic.io/) and [Wordpress](https://wordpress.org/) as CMS
+1. [Netlify](https://www.netlify.com/) as CD and CDN
 
-### `npm run build`
+Make sure all these stacks are available to your system, installed or configured correctly.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. add credentials from CMS and tracker to `.env` file
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ```env
+    # base configs
+    BASE_URL=https://myweb.id
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    # wordpress configs
+    WPGRAPHQL_URL=https://wpgatsbydemo.wpengine.com/graphql
 
-### `npm run eject`
+    # prismic configs
+    PRISMIC_REPO_NAME=myweb-id
+    PRISMIC_ACCESS_TOKEN=access-token
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    # google marketing platform
+    GTM_ID=GTM-123456
+    ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. install dependency and start development
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    ```bash
+    npm i
+    npm run dev
+    ```
+1. open browser at http://localhost:6677, and graphql API on http://localhost:6677/___graphql
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. update schema typings each time you making change on graphql query
 
-## Learn More
+    ```bash
+    npm run schema:intro # optional, run it only on firstime or when there is change on gatsby config
+    npm run schema:ops
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Deploy Automation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+this project will automatically deploy to production when you push this repo to github `master` branch or content published from cms.

@@ -1,0 +1,16 @@
+generates:
+  ./src/graphql-types.ts:
+    schema:
+      - schema.json:
+    documents:
+      - src/**/*.ts
+      - src/**/*.tsx
+    plugins:
+      - typescript
+      - typescript-operations
+    config:
+      maybeValue: T | null | undefined
+
+hooks:
+  afterOneFileWrite:
+    - prettier --write
