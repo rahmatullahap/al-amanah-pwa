@@ -12,6 +12,7 @@ import { BtnLinkPrimary } from '../components/scaffolds';
 class Home extends React.Component<PageProps<GetHomeDataQuery>> {
   render() {
     const data = this.props.data;
+    const location = this.props.location;
     const logo = data?.logo?.childrenImageSharp[0]?.fluid;
     const allArticles = data?.allPrismicArticle.nodes;
     const jumbotron = allArticles.filter(a => a.data.jumbotron)[0];
@@ -38,10 +39,65 @@ class Home extends React.Component<PageProps<GetHomeDataQuery>> {
       },
     ];
 
+      // SEO data
+  const siteMeta = data.site?.siteMetadata;
+
+    const canonical = `${siteMeta.url}/${location.pathname}`;
+
+    const jsonLd = {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'WebSite',
+          '@id': 'https://al-amanah.kawaluyaan-rw05.com/#website',
+          url: 'https://al-amanah.kawaluyaan-rw05.com/',
+          name: 'Kawaluyaan RW05',
+          description: 'kawaluyaan-rw05.com',
+          potentialAction: [
+            {
+              '@type': 'SearchAction',
+              target: 'https://al-amanah.kawaluyaan-rw05.com/?s={search_term_string}',
+              'query-input': 'required name=search_term_string',
+            },
+          ],
+          inLanguage: 'en-US',
+        },
+        {
+          '@type': 'WebPage',
+          '@id': 'https://al-amanah.kawaluyaan-rw05.com/admin/#webpage',
+          url: 'https://al-amanah.kawaluyaan-rw05.com/admin/',
+          name: 'Yayasan Al Amanah - Admin',
+          isPartOf: { '@id': 'https://al-amanah.kawaluyaan-rw05.com/#website' },
+          datePublished: '2020-09-08T06:43:33+00:00',
+          dateModified: '2021-03-19T00:07:14+00:00',
+          inLanguage: 'en-US',
+          potentialAction: [
+            {
+              '@type': 'ReadAction',
+              target: ['https://al-amanah.kawaluyaan-rw05.com/admin/'],
+            },
+          ],
+        },
+      ],
+    };
+
     return (
       <BaseLayout logo={logo} menu={false}>
         <Helmet>
           <title>Yayasan Al Amanah</title>
+          <meta
+            name="robots"
+            content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+          />
+          <link rel="canonical" href={canonical} />
+          <meta property="og:locale" content="en_US" />
+          <meta property="og:type" content="article" />
+          <meta property="og:title" content="Yayasan Al Amanah - Admin" />
+          <meta property="og:url" content="https://al-amanah.kawaluyaan-rw05.com/admin/" />
+          <meta property="og:site_name" content="Kawaluyaan" />
+          <meta property="article:modified_time" content="2021-03-19T00:07:14+00:00" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <script type="application/ld+json">{JSON.stringify(jsonLd, undefined, 4)}</script>
         </Helmet>
         <Jumbotron
           title={jumbotron.data?.title?.text}
@@ -118,6 +174,11 @@ export const query = graphql`
         fluid(maxWidth: 130) {
           ...FileImageSharpFluid
         }
+      }
+    }
+    site {
+      siteMetadata {
+        ...SiteMetadataFields
       }
     }
   }

@@ -536,164 +536,6 @@ export type ImageSharpResize = {
   originalName?: Maybe<Scalars['String']>;
 };
 
-export type PrismicProductDataType = {
-  __typename?: 'PrismicProductDataType';
-  name?: Maybe<Scalars['String']>;
-};
-
-export type PrismicProduct = PrismicDocument &
-  Node & {
-    __typename?: 'PrismicProduct';
-    data?: Maybe<PrismicProductDataType>;
-    dataRaw: Scalars['JSON'];
-    dataString: Scalars['String'];
-    first_publication_date: Scalars['Date'];
-    href: Scalars['String'];
-    url?: Maybe<Scalars['String']>;
-    lang: Scalars['String'];
-    last_publication_date: Scalars['Date'];
-    tags: Array<Scalars['String']>;
-    alternate_languages: Array<PrismicLinkType>;
-    type: Scalars['String'];
-    prismicId: Scalars['ID'];
-    _previewable: Scalars['ID'];
-    uid?: Maybe<Scalars['String']>;
-    id: Scalars['ID'];
-    parent?: Maybe<Node>;
-    children: Array<Node>;
-    internal: Internal;
-  };
-
-export type PrismicProductFirst_Publication_DateArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type PrismicProductLast_Publication_DateArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type PrismicDocument = {
-  /** The document's data object without transformations exactly as it comes from the Prismic API. */
-  dataRaw: Scalars['JSON'];
-  /**
-   * The document's data object without transformations. The object is stringified via `JSON.stringify` to eliminate the need to declare subfields.
-   * @deprecated Use `dataRaw` instead which returns JSON.
-   */
-  dataString?: Maybe<Scalars['String']>;
-  /** The document's initial publication date. */
-  first_publication_date?: Maybe<Scalars['Date']>;
-  /** The document's Prismic API URL. */
-  href?: Maybe<Scalars['String']>;
-  /** The document's URL derived via the link resolver. */
-  url?: Maybe<Scalars['String']>;
-  /** Globally unique identifier. Note that this differs from the `prismicID` field. */
-  id: Scalars['ID'];
-  /** The document's language. */
-  lang: Scalars['String'];
-  /** The document's most recent publication date */
-  last_publication_date?: Maybe<Scalars['Date']>;
-  /** The document's list of tags. */
-  tags: Array<Scalars['String']>;
-  /** Alternate languages for the document. */
-  alternate_languages: Array<PrismicLinkType>;
-  /** The document's Prismic API ID type. */
-  type: Scalars['String'];
-  /** The document's Prismic ID. */
-  prismicId: Scalars['ID'];
-  /** Marks the document as previewable using Prismic's preview system. Include this field if updates to the document should be previewable by content editors before publishing. **Note: the value of this field is not stable and should not be used directly**. */
-  _previewable: Scalars['ID'];
-};
-
-export type PrismicDocumentFirst_Publication_DateArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type PrismicDocumentLast_Publication_DateArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type PrismicHomepageBodyProductPrimaryType = {
-  __typename?: 'PrismicHomepageBodyProductPrimaryType';
-  product_name?: Maybe<PrismicStructuredTextType>;
-  product_price?: Maybe<Scalars['Float']>;
-};
-
-export type PrismicHomepageBodyProduct = PrismicSliceType &
-  Node & {
-    __typename?: 'PrismicHomepageBodyProduct';
-    slice_type: Scalars['String'];
-    slice_label?: Maybe<Scalars['String']>;
-    primary?: Maybe<PrismicHomepageBodyProductPrimaryType>;
-    id: Scalars['ID'];
-    parent?: Maybe<Node>;
-    children: Array<Node>;
-    internal: Internal;
-  };
-
-export type PrismicSliceType = {
-  /** The slice type API ID. */
-  slice_type: Scalars['String'];
-  /** The slice label. */
-  slice_label?: Maybe<Scalars['String']>;
-};
-
-export type PrismicHomepageBodySlicesType = PrismicHomepageBodyProduct;
-
-export type PrismicHomepageDataType = {
-  __typename?: 'PrismicHomepageDataType';
-  title?: Maybe<PrismicStructuredTextType>;
-  description?: Maybe<PrismicStructuredTextType>;
-  body?: Maybe<Array<Maybe<PrismicHomepageBodySlicesType>>>;
-};
-
-export type PrismicHomepage = PrismicDocument &
-  Node & {
-    __typename?: 'PrismicHomepage';
-    data?: Maybe<PrismicHomepageDataType>;
-    dataRaw: Scalars['JSON'];
-    dataString: Scalars['String'];
-    first_publication_date: Scalars['Date'];
-    href: Scalars['String'];
-    url?: Maybe<Scalars['String']>;
-    lang: Scalars['String'];
-    last_publication_date: Scalars['Date'];
-    tags: Array<Scalars['String']>;
-    alternate_languages: Array<PrismicLinkType>;
-    type: Scalars['String'];
-    prismicId: Scalars['ID'];
-    _previewable: Scalars['ID'];
-    id: Scalars['ID'];
-    parent?: Maybe<Node>;
-    children: Array<Node>;
-    internal: Internal;
-  };
-
-export type PrismicHomepageFirst_Publication_DateArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type PrismicHomepageLast_Publication_DateArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
 export type PrismicArticleDataType = {
   __typename?: 'PrismicArticleDataType';
   title?: Maybe<PrismicStructuredTextType>;
@@ -748,7 +590,53 @@ export type PrismicArticleLast_Publication_DateArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
-export type PrismicAllDocumentTypes = PrismicProduct | PrismicHomepage | PrismicArticle;
+export type PrismicDocument = {
+  /** The document's data object without transformations exactly as it comes from the Prismic API. */
+  dataRaw: Scalars['JSON'];
+  /**
+   * The document's data object without transformations. The object is stringified via `JSON.stringify` to eliminate the need to declare subfields.
+   * @deprecated Use `dataRaw` instead which returns JSON.
+   */
+  dataString?: Maybe<Scalars['String']>;
+  /** The document's initial publication date. */
+  first_publication_date?: Maybe<Scalars['Date']>;
+  /** The document's Prismic API URL. */
+  href?: Maybe<Scalars['String']>;
+  /** The document's URL derived via the link resolver. */
+  url?: Maybe<Scalars['String']>;
+  /** Globally unique identifier. Note that this differs from the `prismicID` field. */
+  id: Scalars['ID'];
+  /** The document's language. */
+  lang: Scalars['String'];
+  /** The document's most recent publication date */
+  last_publication_date?: Maybe<Scalars['Date']>;
+  /** The document's list of tags. */
+  tags: Array<Scalars['String']>;
+  /** Alternate languages for the document. */
+  alternate_languages: Array<PrismicLinkType>;
+  /** The document's Prismic API ID type. */
+  type: Scalars['String'];
+  /** The document's Prismic ID. */
+  prismicId: Scalars['ID'];
+  /** Marks the document as previewable using Prismic's preview system. Include this field if updates to the document should be previewable by content editors before publishing. **Note: the value of this field is not stable and should not be used directly**. */
+  _previewable: Scalars['ID'];
+};
+
+export type PrismicDocumentFirst_Publication_DateArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type PrismicDocumentLast_Publication_DateArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type PrismicAllDocumentTypes = PrismicArticle;
 
 export type PrismicImageFixedType = {
   __typename?: 'PrismicImageFixedType';
@@ -1423,6 +1311,138 @@ export type PrismicLinkType = {
   raw?: Maybe<Scalars['JSON']>;
 };
 
+export type PrismicSliceType = {
+  /** The slice type API ID. */
+  slice_type: Scalars['String'];
+  /** The slice label. */
+  slice_label?: Maybe<Scalars['String']>;
+};
+
+export type PrismicHomepage = Node & {
+  __typename?: 'PrismicHomepage';
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  type?: Maybe<Scalars['String']>;
+  href?: Maybe<Scalars['String']>;
+  first_publication_date?: Maybe<Scalars['Date']>;
+  last_publication_date?: Maybe<Scalars['Date']>;
+  slugs?: Maybe<Array<Maybe<Scalars['String']>>>;
+  lang?: Maybe<Scalars['String']>;
+  data?: Maybe<PrismicHomepageData>;
+  prismicId?: Maybe<Scalars['String']>;
+  dataString?: Maybe<Scalars['String']>;
+  dataRaw?: Maybe<PrismicHomepageDataRaw>;
+  _previewable?: Maybe<Scalars['String']>;
+};
+
+export type PrismicHomepageFirst_Publication_DateArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type PrismicHomepageLast_Publication_DateArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type PrismicHomepageData = {
+  __typename?: 'PrismicHomepageData';
+  title?: Maybe<Array<Maybe<PrismicHomepageDataTitle>>>;
+  description?: Maybe<Array<Maybe<PrismicHomepageDataDescription>>>;
+  body?: Maybe<Array<Maybe<PrismicHomepageDataBody>>>;
+};
+
+export type PrismicHomepageDataTitle = {
+  __typename?: 'PrismicHomepageDataTitle';
+  type?: Maybe<Scalars['String']>;
+  text?: Maybe<Scalars['String']>;
+};
+
+export type PrismicHomepageDataDescription = {
+  __typename?: 'PrismicHomepageDataDescription';
+  type?: Maybe<Scalars['String']>;
+  text?: Maybe<Scalars['String']>;
+  spans?: Maybe<Array<Maybe<PrismicHomepageDataDescriptionSpans>>>;
+};
+
+export type PrismicHomepageDataDescriptionSpans = {
+  __typename?: 'PrismicHomepageDataDescriptionSpans';
+  start?: Maybe<Scalars['Int']>;
+  end?: Maybe<Scalars['Int']>;
+  type?: Maybe<Scalars['String']>;
+};
+
+export type PrismicHomepageDataBody = {
+  __typename?: 'PrismicHomepageDataBody';
+  slice_type?: Maybe<Scalars['String']>;
+  slice_label?: Maybe<Scalars['String']>;
+  primary?: Maybe<PrismicHomepageDataBodyPrimary>;
+};
+
+export type PrismicHomepageDataBodyPrimary = {
+  __typename?: 'PrismicHomepageDataBodyPrimary';
+  product_name?: Maybe<Array<Maybe<PrismicHomepageDataBodyPrimaryProduct_Name>>>;
+  product_price?: Maybe<Scalars['Int']>;
+};
+
+export type PrismicHomepageDataBodyPrimaryProduct_Name = {
+  __typename?: 'PrismicHomepageDataBodyPrimaryProduct_name';
+  type?: Maybe<Scalars['String']>;
+  text?: Maybe<Scalars['String']>;
+};
+
+export type PrismicHomepageDataRaw = {
+  __typename?: 'PrismicHomepageDataRaw';
+  title?: Maybe<Array<Maybe<PrismicHomepageDataRawTitle>>>;
+  description?: Maybe<Array<Maybe<PrismicHomepageDataRawDescription>>>;
+  body?: Maybe<Array<Maybe<PrismicHomepageDataRawBody>>>;
+};
+
+export type PrismicHomepageDataRawTitle = {
+  __typename?: 'PrismicHomepageDataRawTitle';
+  type?: Maybe<Scalars['String']>;
+  text?: Maybe<Scalars['String']>;
+};
+
+export type PrismicHomepageDataRawDescription = {
+  __typename?: 'PrismicHomepageDataRawDescription';
+  type?: Maybe<Scalars['String']>;
+  text?: Maybe<Scalars['String']>;
+  spans?: Maybe<Array<Maybe<PrismicHomepageDataRawDescriptionSpans>>>;
+};
+
+export type PrismicHomepageDataRawDescriptionSpans = {
+  __typename?: 'PrismicHomepageDataRawDescriptionSpans';
+  start?: Maybe<Scalars['Int']>;
+  end?: Maybe<Scalars['Int']>;
+  type?: Maybe<Scalars['String']>;
+};
+
+export type PrismicHomepageDataRawBody = {
+  __typename?: 'PrismicHomepageDataRawBody';
+  slice_type?: Maybe<Scalars['String']>;
+  slice_label?: Maybe<Scalars['String']>;
+  primary?: Maybe<PrismicHomepageDataRawBodyPrimary>;
+};
+
+export type PrismicHomepageDataRawBodyPrimary = {
+  __typename?: 'PrismicHomepageDataRawBodyPrimary';
+  product_name?: Maybe<Array<Maybe<PrismicHomepageDataRawBodyPrimaryProduct_Name>>>;
+  product_price?: Maybe<Scalars['Int']>;
+};
+
+export type PrismicHomepageDataRawBodyPrimaryProduct_Name = {
+  __typename?: 'PrismicHomepageDataRawBodyPrimaryProduct_name';
+  type?: Maybe<Scalars['String']>;
+  text?: Maybe<Scalars['String']>;
+};
+
 export type SiteBuildMetadata = Node & {
   __typename?: 'SiteBuildMetadata';
   id: Scalars['ID'];
@@ -1487,150 +1507,7 @@ export type SitePluginPluginOptions = {
 
 export type SitePluginPluginOptionsSchemas = {
   __typename?: 'SitePluginPluginOptionsSchemas';
-  product?: Maybe<SitePluginPluginOptionsSchemasProduct>;
-  homepage?: Maybe<SitePluginPluginOptionsSchemasHomepage>;
   article?: Maybe<SitePluginPluginOptionsSchemasArticle>;
-};
-
-export type SitePluginPluginOptionsSchemasProduct = {
-  __typename?: 'SitePluginPluginOptionsSchemasProduct';
-  Main?: Maybe<SitePluginPluginOptionsSchemasProductMain>;
-};
-
-export type SitePluginPluginOptionsSchemasProductMain = {
-  __typename?: 'SitePluginPluginOptionsSchemasProductMain';
-  uid?: Maybe<SitePluginPluginOptionsSchemasProductMainUid>;
-  name?: Maybe<SitePluginPluginOptionsSchemasProductMainName>;
-};
-
-export type SitePluginPluginOptionsSchemasProductMainUid = {
-  __typename?: 'SitePluginPluginOptionsSchemasProductMainUid';
-  type?: Maybe<Scalars['String']>;
-  config?: Maybe<SitePluginPluginOptionsSchemasProductMainUidConfig>;
-};
-
-export type SitePluginPluginOptionsSchemasProductMainUidConfig = {
-  __typename?: 'SitePluginPluginOptionsSchemasProductMainUidConfig';
-  label?: Maybe<Scalars['String']>;
-  placeholder?: Maybe<Scalars['String']>;
-};
-
-export type SitePluginPluginOptionsSchemasProductMainName = {
-  __typename?: 'SitePluginPluginOptionsSchemasProductMainName';
-  type?: Maybe<Scalars['String']>;
-  config?: Maybe<SitePluginPluginOptionsSchemasProductMainNameConfig>;
-};
-
-export type SitePluginPluginOptionsSchemasProductMainNameConfig = {
-  __typename?: 'SitePluginPluginOptionsSchemasProductMainNameConfig';
-  label?: Maybe<Scalars['String']>;
-  placeholder?: Maybe<Scalars['String']>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepage = {
-  __typename?: 'SitePluginPluginOptionsSchemasHomepage';
-  Main?: Maybe<SitePluginPluginOptionsSchemasHomepageMain>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMain = {
-  __typename?: 'SitePluginPluginOptionsSchemasHomepageMain';
-  title?: Maybe<SitePluginPluginOptionsSchemasHomepageMainTitle>;
-  description?: Maybe<SitePluginPluginOptionsSchemasHomepageMainDescription>;
-  body?: Maybe<SitePluginPluginOptionsSchemasHomepageMainBody>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainTitle = {
-  __typename?: 'SitePluginPluginOptionsSchemasHomepageMainTitle';
-  type?: Maybe<Scalars['String']>;
-  config?: Maybe<SitePluginPluginOptionsSchemasHomepageMainTitleConfig>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainTitleConfig = {
-  __typename?: 'SitePluginPluginOptionsSchemasHomepageMainTitleConfig';
-  single?: Maybe<Scalars['String']>;
-  label?: Maybe<Scalars['String']>;
-  placeholder?: Maybe<Scalars['String']>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainDescription = {
-  __typename?: 'SitePluginPluginOptionsSchemasHomepageMainDescription';
-  type?: Maybe<Scalars['String']>;
-  config?: Maybe<SitePluginPluginOptionsSchemasHomepageMainDescriptionConfig>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainDescriptionConfig = {
-  __typename?: 'SitePluginPluginOptionsSchemasHomepageMainDescriptionConfig';
-  multi?: Maybe<Scalars['String']>;
-  label?: Maybe<Scalars['String']>;
-  placeholder?: Maybe<Scalars['String']>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainBody = {
-  __typename?: 'SitePluginPluginOptionsSchemasHomepageMainBody';
-  type?: Maybe<Scalars['String']>;
-  fieldset?: Maybe<Scalars['String']>;
-  config?: Maybe<SitePluginPluginOptionsSchemasHomepageMainBodyConfig>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainBodyConfig = {
-  __typename?: 'SitePluginPluginOptionsSchemasHomepageMainBodyConfig';
-  labels?: Maybe<SitePluginPluginOptionsSchemasHomepageMainBodyConfigLabels>;
-  choices?: Maybe<SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoices>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainBodyConfigLabels = {
-  __typename?: 'SitePluginPluginOptionsSchemasHomepageMainBodyConfigLabels';
-  product?: Maybe<Array<Maybe<SitePluginPluginOptionsSchemasHomepageMainBodyConfigLabelsProduct>>>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainBodyConfigLabelsProduct = {
-  __typename?: 'SitePluginPluginOptionsSchemasHomepageMainBodyConfigLabelsProduct';
-  name?: Maybe<Scalars['String']>;
-  display?: Maybe<Scalars['String']>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoices = {
-  __typename?: 'SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoices';
-  product?: Maybe<SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProduct>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProduct = {
-  __typename?: 'SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProduct';
-  type?: Maybe<Scalars['String']>;
-  fieldset?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-  icon?: Maybe<Scalars['String']>;
-  non_repeat?: Maybe<SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_Repeat>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_Repeat = {
-  __typename?: 'SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_repeat';
-  product_name?: Maybe<SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_RepeatProduct_Name>;
-  product_price?: Maybe<SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_RepeatProduct_Price>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_RepeatProduct_Name = {
-  __typename?: 'SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_repeatProduct_name';
-  type?: Maybe<Scalars['String']>;
-  config?: Maybe<SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_RepeatProduct_NameConfig>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_RepeatProduct_NameConfig = {
-  __typename?: 'SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_repeatProduct_nameConfig';
-  single?: Maybe<Scalars['String']>;
-  label?: Maybe<Scalars['String']>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_RepeatProduct_Price = {
-  __typename?: 'SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_repeatProduct_price';
-  type?: Maybe<Scalars['String']>;
-  config?: Maybe<SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_RepeatProduct_PriceConfig>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_RepeatProduct_PriceConfig = {
-  __typename?: 'SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_repeatProduct_priceConfig';
-  label?: Maybe<Scalars['String']>;
-  placeholder?: Maybe<Scalars['String']>;
 };
 
 export type SitePluginPluginOptionsSchemasArticle = {
@@ -1777,14 +1654,10 @@ export type Query = {
   allSitePage: SitePageConnection;
   imageSharp?: Maybe<ImageSharp>;
   allImageSharp: ImageSharpConnection;
-  prismicProduct?: Maybe<PrismicProduct>;
-  allPrismicProduct: PrismicProductConnection;
-  prismicHomepageBodyProduct?: Maybe<PrismicHomepageBodyProduct>;
-  allPrismicHomepageBodyProduct: PrismicHomepageBodyProductConnection;
-  prismicHomepage?: Maybe<PrismicHomepage>;
-  allPrismicHomepage: PrismicHomepageConnection;
   prismicArticle?: Maybe<PrismicArticle>;
   allPrismicArticle: PrismicArticleConnection;
+  prismicHomepage?: Maybe<PrismicHomepage>;
+  allPrismicHomepage: PrismicHomepageConnection;
   siteBuildMetadata?: Maybe<SiteBuildMetadata>;
   allSiteBuildMetadata: SiteBuildMetadataConnection;
   sitePlugin?: Maybe<SitePlugin>;
@@ -1946,78 +1819,6 @@ export type QueryAllImageSharpArgs = {
   limit?: Maybe<Scalars['Int']>;
 };
 
-export type QueryPrismicProductArgs = {
-  data?: Maybe<PrismicProductDataTypeFilterInput>;
-  dataRaw?: Maybe<JsonQueryOperatorInput>;
-  dataString?: Maybe<StringQueryOperatorInput>;
-  first_publication_date?: Maybe<DateQueryOperatorInput>;
-  href?: Maybe<StringQueryOperatorInput>;
-  url?: Maybe<StringQueryOperatorInput>;
-  lang?: Maybe<StringQueryOperatorInput>;
-  last_publication_date?: Maybe<DateQueryOperatorInput>;
-  tags?: Maybe<StringQueryOperatorInput>;
-  alternate_languages?: Maybe<PrismicLinkTypeFilterListInput>;
-  type?: Maybe<StringQueryOperatorInput>;
-  prismicId?: Maybe<IdQueryOperatorInput>;
-  _previewable?: Maybe<IdQueryOperatorInput>;
-  uid?: Maybe<StringQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-};
-
-export type QueryAllPrismicProductArgs = {
-  filter?: Maybe<PrismicProductFilterInput>;
-  sort?: Maybe<PrismicProductSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-export type QueryPrismicHomepageBodyProductArgs = {
-  slice_type?: Maybe<StringQueryOperatorInput>;
-  slice_label?: Maybe<StringQueryOperatorInput>;
-  primary?: Maybe<PrismicHomepageBodyProductPrimaryTypeFilterInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-};
-
-export type QueryAllPrismicHomepageBodyProductArgs = {
-  filter?: Maybe<PrismicHomepageBodyProductFilterInput>;
-  sort?: Maybe<PrismicHomepageBodyProductSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-export type QueryPrismicHomepageArgs = {
-  data?: Maybe<PrismicHomepageDataTypeFilterInput>;
-  dataRaw?: Maybe<JsonQueryOperatorInput>;
-  dataString?: Maybe<StringQueryOperatorInput>;
-  first_publication_date?: Maybe<DateQueryOperatorInput>;
-  href?: Maybe<StringQueryOperatorInput>;
-  url?: Maybe<StringQueryOperatorInput>;
-  lang?: Maybe<StringQueryOperatorInput>;
-  last_publication_date?: Maybe<DateQueryOperatorInput>;
-  tags?: Maybe<StringQueryOperatorInput>;
-  alternate_languages?: Maybe<PrismicLinkTypeFilterListInput>;
-  type?: Maybe<StringQueryOperatorInput>;
-  prismicId?: Maybe<IdQueryOperatorInput>;
-  _previewable?: Maybe<IdQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-};
-
-export type QueryAllPrismicHomepageArgs = {
-  filter?: Maybe<PrismicHomepageFilterInput>;
-  sort?: Maybe<PrismicHomepageSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
 export type QueryPrismicArticleArgs = {
   data?: Maybe<PrismicArticleDataTypeFilterInput>;
   dataRaw?: Maybe<JsonQueryOperatorInput>;
@@ -2042,6 +1843,31 @@ export type QueryPrismicArticleArgs = {
 export type QueryAllPrismicArticleArgs = {
   filter?: Maybe<PrismicArticleFilterInput>;
   sort?: Maybe<PrismicArticleSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+export type QueryPrismicHomepageArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  type?: Maybe<StringQueryOperatorInput>;
+  href?: Maybe<StringQueryOperatorInput>;
+  first_publication_date?: Maybe<DateQueryOperatorInput>;
+  last_publication_date?: Maybe<DateQueryOperatorInput>;
+  slugs?: Maybe<StringQueryOperatorInput>;
+  lang?: Maybe<StringQueryOperatorInput>;
+  data?: Maybe<PrismicHomepageDataFilterInput>;
+  prismicId?: Maybe<StringQueryOperatorInput>;
+  dataString?: Maybe<StringQueryOperatorInput>;
+  dataRaw?: Maybe<PrismicHomepageDataRawFilterInput>;
+  _previewable?: Maybe<StringQueryOperatorInput>;
+};
+
+export type QueryAllPrismicHomepageArgs = {
+  filter?: Maybe<PrismicHomepageFilterInput>;
+  sort?: Maybe<PrismicHomepageSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
@@ -3267,565 +3093,6 @@ export type ImageSharpSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
-export type PrismicProductDataTypeFilterInput = {
-  name?: Maybe<StringQueryOperatorInput>;
-};
-
-export type PrismicLinkTypeFilterListInput = {
-  elemMatch?: Maybe<PrismicLinkTypeFilterInput>;
-};
-
-export type PrismicLinkTypeFilterInput = {
-  link_type?: Maybe<PrismicLinkTypesQueryOperatorInput>;
-  isBroken?: Maybe<BooleanQueryOperatorInput>;
-  url?: Maybe<StringQueryOperatorInput>;
-  target?: Maybe<StringQueryOperatorInput>;
-  size?: Maybe<IntQueryOperatorInput>;
-  id?: Maybe<IdQueryOperatorInput>;
-  type?: Maybe<StringQueryOperatorInput>;
-  tags?: Maybe<StringQueryOperatorInput>;
-  lang?: Maybe<StringQueryOperatorInput>;
-  slug?: Maybe<StringQueryOperatorInput>;
-  uid?: Maybe<StringQueryOperatorInput>;
-  raw?: Maybe<JsonQueryOperatorInput>;
-};
-
-export type PrismicLinkTypesQueryOperatorInput = {
-  eq?: Maybe<PrismicLinkTypes>;
-  ne?: Maybe<PrismicLinkTypes>;
-  in?: Maybe<Array<Maybe<PrismicLinkTypes>>>;
-  nin?: Maybe<Array<Maybe<PrismicLinkTypes>>>;
-};
-
-export type IdQueryOperatorInput = {
-  eq?: Maybe<Scalars['ID']>;
-  ne?: Maybe<Scalars['ID']>;
-  in?: Maybe<Array<Maybe<Scalars['ID']>>>;
-  nin?: Maybe<Array<Maybe<Scalars['ID']>>>;
-};
-
-export type PrismicProductConnection = {
-  __typename?: 'PrismicProductConnection';
-  totalCount: Scalars['Int'];
-  edges: Array<PrismicProductEdge>;
-  nodes: Array<PrismicProduct>;
-  pageInfo: PageInfo;
-  distinct: Array<Scalars['String']>;
-  group: Array<PrismicProductGroupConnection>;
-};
-
-export type PrismicProductConnectionDistinctArgs = {
-  field: PrismicProductFieldsEnum;
-};
-
-export type PrismicProductConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-  field: PrismicProductFieldsEnum;
-};
-
-export type PrismicProductEdge = {
-  __typename?: 'PrismicProductEdge';
-  next?: Maybe<PrismicProduct>;
-  node: PrismicProduct;
-  previous?: Maybe<PrismicProduct>;
-};
-
-export enum PrismicProductFieldsEnum {
-  DataName = 'data___name',
-  DataRaw = 'dataRaw',
-  DataString = 'dataString',
-  FirstPublicationDate = 'first_publication_date',
-  Href = 'href',
-  Url = 'url',
-  Lang = 'lang',
-  LastPublicationDate = 'last_publication_date',
-  Tags = 'tags',
-  AlternateLanguages = 'alternate_languages',
-  AlternateLanguagesLinkType = 'alternate_languages___link_type',
-  AlternateLanguagesIsBroken = 'alternate_languages___isBroken',
-  AlternateLanguagesUrl = 'alternate_languages___url',
-  AlternateLanguagesTarget = 'alternate_languages___target',
-  AlternateLanguagesSize = 'alternate_languages___size',
-  AlternateLanguagesId = 'alternate_languages___id',
-  AlternateLanguagesType = 'alternate_languages___type',
-  AlternateLanguagesTags = 'alternate_languages___tags',
-  AlternateLanguagesLang = 'alternate_languages___lang',
-  AlternateLanguagesSlug = 'alternate_languages___slug',
-  AlternateLanguagesUid = 'alternate_languages___uid',
-  AlternateLanguagesRaw = 'alternate_languages___raw',
-  Type = 'type',
-  PrismicId = 'prismicId',
-  Previewable = '_previewable',
-  Uid = 'uid',
-  Id = 'id',
-  ParentId = 'parent___id',
-  ParentParentId = 'parent___parent___id',
-  ParentParentParentId = 'parent___parent___parent___id',
-  ParentParentParentChildren = 'parent___parent___parent___children',
-  ParentParentChildren = 'parent___parent___children',
-  ParentParentChildrenId = 'parent___parent___children___id',
-  ParentParentChildrenChildren = 'parent___parent___children___children',
-  ParentParentInternalContent = 'parent___parent___internal___content',
-  ParentParentInternalContentDigest = 'parent___parent___internal___contentDigest',
-  ParentParentInternalDescription = 'parent___parent___internal___description',
-  ParentParentInternalFieldOwners = 'parent___parent___internal___fieldOwners',
-  ParentParentInternalIgnoreType = 'parent___parent___internal___ignoreType',
-  ParentParentInternalMediaType = 'parent___parent___internal___mediaType',
-  ParentParentInternalOwner = 'parent___parent___internal___owner',
-  ParentParentInternalType = 'parent___parent___internal___type',
-  ParentChildren = 'parent___children',
-  ParentChildrenId = 'parent___children___id',
-  ParentChildrenParentId = 'parent___children___parent___id',
-  ParentChildrenParentChildren = 'parent___children___parent___children',
-  ParentChildrenChildren = 'parent___children___children',
-  ParentChildrenChildrenId = 'parent___children___children___id',
-  ParentChildrenChildrenChildren = 'parent___children___children___children',
-  ParentChildrenInternalContent = 'parent___children___internal___content',
-  ParentChildrenInternalContentDigest = 'parent___children___internal___contentDigest',
-  ParentChildrenInternalDescription = 'parent___children___internal___description',
-  ParentChildrenInternalFieldOwners = 'parent___children___internal___fieldOwners',
-  ParentChildrenInternalIgnoreType = 'parent___children___internal___ignoreType',
-  ParentChildrenInternalMediaType = 'parent___children___internal___mediaType',
-  ParentChildrenInternalOwner = 'parent___children___internal___owner',
-  ParentChildrenInternalType = 'parent___children___internal___type',
-  ParentInternalContent = 'parent___internal___content',
-  ParentInternalContentDigest = 'parent___internal___contentDigest',
-  ParentInternalDescription = 'parent___internal___description',
-  ParentInternalFieldOwners = 'parent___internal___fieldOwners',
-  ParentInternalIgnoreType = 'parent___internal___ignoreType',
-  ParentInternalMediaType = 'parent___internal___mediaType',
-  ParentInternalOwner = 'parent___internal___owner',
-  ParentInternalType = 'parent___internal___type',
-  Children = 'children',
-  ChildrenId = 'children___id',
-  ChildrenParentId = 'children___parent___id',
-  ChildrenParentParentId = 'children___parent___parent___id',
-  ChildrenParentParentChildren = 'children___parent___parent___children',
-  ChildrenParentChildren = 'children___parent___children',
-  ChildrenParentChildrenId = 'children___parent___children___id',
-  ChildrenParentChildrenChildren = 'children___parent___children___children',
-  ChildrenParentInternalContent = 'children___parent___internal___content',
-  ChildrenParentInternalContentDigest = 'children___parent___internal___contentDigest',
-  ChildrenParentInternalDescription = 'children___parent___internal___description',
-  ChildrenParentInternalFieldOwners = 'children___parent___internal___fieldOwners',
-  ChildrenParentInternalIgnoreType = 'children___parent___internal___ignoreType',
-  ChildrenParentInternalMediaType = 'children___parent___internal___mediaType',
-  ChildrenParentInternalOwner = 'children___parent___internal___owner',
-  ChildrenParentInternalType = 'children___parent___internal___type',
-  ChildrenChildren = 'children___children',
-  ChildrenChildrenId = 'children___children___id',
-  ChildrenChildrenParentId = 'children___children___parent___id',
-  ChildrenChildrenParentChildren = 'children___children___parent___children',
-  ChildrenChildrenChildren = 'children___children___children',
-  ChildrenChildrenChildrenId = 'children___children___children___id',
-  ChildrenChildrenChildrenChildren = 'children___children___children___children',
-  ChildrenChildrenInternalContent = 'children___children___internal___content',
-  ChildrenChildrenInternalContentDigest = 'children___children___internal___contentDigest',
-  ChildrenChildrenInternalDescription = 'children___children___internal___description',
-  ChildrenChildrenInternalFieldOwners = 'children___children___internal___fieldOwners',
-  ChildrenChildrenInternalIgnoreType = 'children___children___internal___ignoreType',
-  ChildrenChildrenInternalMediaType = 'children___children___internal___mediaType',
-  ChildrenChildrenInternalOwner = 'children___children___internal___owner',
-  ChildrenChildrenInternalType = 'children___children___internal___type',
-  ChildrenInternalContent = 'children___internal___content',
-  ChildrenInternalContentDigest = 'children___internal___contentDigest',
-  ChildrenInternalDescription = 'children___internal___description',
-  ChildrenInternalFieldOwners = 'children___internal___fieldOwners',
-  ChildrenInternalIgnoreType = 'children___internal___ignoreType',
-  ChildrenInternalMediaType = 'children___internal___mediaType',
-  ChildrenInternalOwner = 'children___internal___owner',
-  ChildrenInternalType = 'children___internal___type',
-  InternalContent = 'internal___content',
-  InternalContentDigest = 'internal___contentDigest',
-  InternalDescription = 'internal___description',
-  InternalFieldOwners = 'internal___fieldOwners',
-  InternalIgnoreType = 'internal___ignoreType',
-  InternalMediaType = 'internal___mediaType',
-  InternalOwner = 'internal___owner',
-  InternalType = 'internal___type',
-}
-
-export type PrismicProductGroupConnection = {
-  __typename?: 'PrismicProductGroupConnection';
-  totalCount: Scalars['Int'];
-  edges: Array<PrismicProductEdge>;
-  nodes: Array<PrismicProduct>;
-  pageInfo: PageInfo;
-  field: Scalars['String'];
-  fieldValue?: Maybe<Scalars['String']>;
-};
-
-export type PrismicProductFilterInput = {
-  data?: Maybe<PrismicProductDataTypeFilterInput>;
-  dataRaw?: Maybe<JsonQueryOperatorInput>;
-  dataString?: Maybe<StringQueryOperatorInput>;
-  first_publication_date?: Maybe<DateQueryOperatorInput>;
-  href?: Maybe<StringQueryOperatorInput>;
-  url?: Maybe<StringQueryOperatorInput>;
-  lang?: Maybe<StringQueryOperatorInput>;
-  last_publication_date?: Maybe<DateQueryOperatorInput>;
-  tags?: Maybe<StringQueryOperatorInput>;
-  alternate_languages?: Maybe<PrismicLinkTypeFilterListInput>;
-  type?: Maybe<StringQueryOperatorInput>;
-  prismicId?: Maybe<IdQueryOperatorInput>;
-  _previewable?: Maybe<IdQueryOperatorInput>;
-  uid?: Maybe<StringQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-};
-
-export type PrismicProductSortInput = {
-  fields?: Maybe<Array<Maybe<PrismicProductFieldsEnum>>>;
-  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
-};
-
-export type PrismicHomepageBodyProductPrimaryTypeFilterInput = {
-  product_name?: Maybe<PrismicStructuredTextTypeFilterInput>;
-  product_price?: Maybe<FloatQueryOperatorInput>;
-};
-
-export type PrismicStructuredTextTypeFilterInput = {
-  html?: Maybe<StringQueryOperatorInput>;
-  text?: Maybe<StringQueryOperatorInput>;
-  raw?: Maybe<JsonQueryOperatorInput>;
-};
-
-export type PrismicHomepageBodyProductConnection = {
-  __typename?: 'PrismicHomepageBodyProductConnection';
-  totalCount: Scalars['Int'];
-  edges: Array<PrismicHomepageBodyProductEdge>;
-  nodes: Array<PrismicHomepageBodyProduct>;
-  pageInfo: PageInfo;
-  distinct: Array<Scalars['String']>;
-  group: Array<PrismicHomepageBodyProductGroupConnection>;
-};
-
-export type PrismicHomepageBodyProductConnectionDistinctArgs = {
-  field: PrismicHomepageBodyProductFieldsEnum;
-};
-
-export type PrismicHomepageBodyProductConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-  field: PrismicHomepageBodyProductFieldsEnum;
-};
-
-export type PrismicHomepageBodyProductEdge = {
-  __typename?: 'PrismicHomepageBodyProductEdge';
-  next?: Maybe<PrismicHomepageBodyProduct>;
-  node: PrismicHomepageBodyProduct;
-  previous?: Maybe<PrismicHomepageBodyProduct>;
-};
-
-export enum PrismicHomepageBodyProductFieldsEnum {
-  SliceType = 'slice_type',
-  SliceLabel = 'slice_label',
-  PrimaryProductNameHtml = 'primary___product_name___html',
-  PrimaryProductNameText = 'primary___product_name___text',
-  PrimaryProductNameRaw = 'primary___product_name___raw',
-  PrimaryProductPrice = 'primary___product_price',
-  Id = 'id',
-  ParentId = 'parent___id',
-  ParentParentId = 'parent___parent___id',
-  ParentParentParentId = 'parent___parent___parent___id',
-  ParentParentParentChildren = 'parent___parent___parent___children',
-  ParentParentChildren = 'parent___parent___children',
-  ParentParentChildrenId = 'parent___parent___children___id',
-  ParentParentChildrenChildren = 'parent___parent___children___children',
-  ParentParentInternalContent = 'parent___parent___internal___content',
-  ParentParentInternalContentDigest = 'parent___parent___internal___contentDigest',
-  ParentParentInternalDescription = 'parent___parent___internal___description',
-  ParentParentInternalFieldOwners = 'parent___parent___internal___fieldOwners',
-  ParentParentInternalIgnoreType = 'parent___parent___internal___ignoreType',
-  ParentParentInternalMediaType = 'parent___parent___internal___mediaType',
-  ParentParentInternalOwner = 'parent___parent___internal___owner',
-  ParentParentInternalType = 'parent___parent___internal___type',
-  ParentChildren = 'parent___children',
-  ParentChildrenId = 'parent___children___id',
-  ParentChildrenParentId = 'parent___children___parent___id',
-  ParentChildrenParentChildren = 'parent___children___parent___children',
-  ParentChildrenChildren = 'parent___children___children',
-  ParentChildrenChildrenId = 'parent___children___children___id',
-  ParentChildrenChildrenChildren = 'parent___children___children___children',
-  ParentChildrenInternalContent = 'parent___children___internal___content',
-  ParentChildrenInternalContentDigest = 'parent___children___internal___contentDigest',
-  ParentChildrenInternalDescription = 'parent___children___internal___description',
-  ParentChildrenInternalFieldOwners = 'parent___children___internal___fieldOwners',
-  ParentChildrenInternalIgnoreType = 'parent___children___internal___ignoreType',
-  ParentChildrenInternalMediaType = 'parent___children___internal___mediaType',
-  ParentChildrenInternalOwner = 'parent___children___internal___owner',
-  ParentChildrenInternalType = 'parent___children___internal___type',
-  ParentInternalContent = 'parent___internal___content',
-  ParentInternalContentDigest = 'parent___internal___contentDigest',
-  ParentInternalDescription = 'parent___internal___description',
-  ParentInternalFieldOwners = 'parent___internal___fieldOwners',
-  ParentInternalIgnoreType = 'parent___internal___ignoreType',
-  ParentInternalMediaType = 'parent___internal___mediaType',
-  ParentInternalOwner = 'parent___internal___owner',
-  ParentInternalType = 'parent___internal___type',
-  Children = 'children',
-  ChildrenId = 'children___id',
-  ChildrenParentId = 'children___parent___id',
-  ChildrenParentParentId = 'children___parent___parent___id',
-  ChildrenParentParentChildren = 'children___parent___parent___children',
-  ChildrenParentChildren = 'children___parent___children',
-  ChildrenParentChildrenId = 'children___parent___children___id',
-  ChildrenParentChildrenChildren = 'children___parent___children___children',
-  ChildrenParentInternalContent = 'children___parent___internal___content',
-  ChildrenParentInternalContentDigest = 'children___parent___internal___contentDigest',
-  ChildrenParentInternalDescription = 'children___parent___internal___description',
-  ChildrenParentInternalFieldOwners = 'children___parent___internal___fieldOwners',
-  ChildrenParentInternalIgnoreType = 'children___parent___internal___ignoreType',
-  ChildrenParentInternalMediaType = 'children___parent___internal___mediaType',
-  ChildrenParentInternalOwner = 'children___parent___internal___owner',
-  ChildrenParentInternalType = 'children___parent___internal___type',
-  ChildrenChildren = 'children___children',
-  ChildrenChildrenId = 'children___children___id',
-  ChildrenChildrenParentId = 'children___children___parent___id',
-  ChildrenChildrenParentChildren = 'children___children___parent___children',
-  ChildrenChildrenChildren = 'children___children___children',
-  ChildrenChildrenChildrenId = 'children___children___children___id',
-  ChildrenChildrenChildrenChildren = 'children___children___children___children',
-  ChildrenChildrenInternalContent = 'children___children___internal___content',
-  ChildrenChildrenInternalContentDigest = 'children___children___internal___contentDigest',
-  ChildrenChildrenInternalDescription = 'children___children___internal___description',
-  ChildrenChildrenInternalFieldOwners = 'children___children___internal___fieldOwners',
-  ChildrenChildrenInternalIgnoreType = 'children___children___internal___ignoreType',
-  ChildrenChildrenInternalMediaType = 'children___children___internal___mediaType',
-  ChildrenChildrenInternalOwner = 'children___children___internal___owner',
-  ChildrenChildrenInternalType = 'children___children___internal___type',
-  ChildrenInternalContent = 'children___internal___content',
-  ChildrenInternalContentDigest = 'children___internal___contentDigest',
-  ChildrenInternalDescription = 'children___internal___description',
-  ChildrenInternalFieldOwners = 'children___internal___fieldOwners',
-  ChildrenInternalIgnoreType = 'children___internal___ignoreType',
-  ChildrenInternalMediaType = 'children___internal___mediaType',
-  ChildrenInternalOwner = 'children___internal___owner',
-  ChildrenInternalType = 'children___internal___type',
-  InternalContent = 'internal___content',
-  InternalContentDigest = 'internal___contentDigest',
-  InternalDescription = 'internal___description',
-  InternalFieldOwners = 'internal___fieldOwners',
-  InternalIgnoreType = 'internal___ignoreType',
-  InternalMediaType = 'internal___mediaType',
-  InternalOwner = 'internal___owner',
-  InternalType = 'internal___type',
-}
-
-export type PrismicHomepageBodyProductGroupConnection = {
-  __typename?: 'PrismicHomepageBodyProductGroupConnection';
-  totalCount: Scalars['Int'];
-  edges: Array<PrismicHomepageBodyProductEdge>;
-  nodes: Array<PrismicHomepageBodyProduct>;
-  pageInfo: PageInfo;
-  field: Scalars['String'];
-  fieldValue?: Maybe<Scalars['String']>;
-};
-
-export type PrismicHomepageBodyProductFilterInput = {
-  slice_type?: Maybe<StringQueryOperatorInput>;
-  slice_label?: Maybe<StringQueryOperatorInput>;
-  primary?: Maybe<PrismicHomepageBodyProductPrimaryTypeFilterInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-};
-
-export type PrismicHomepageBodyProductSortInput = {
-  fields?: Maybe<Array<Maybe<PrismicHomepageBodyProductFieldsEnum>>>;
-  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
-};
-
-export type PrismicHomepageDataTypeFilterInput = {
-  title?: Maybe<PrismicStructuredTextTypeFilterInput>;
-  description?: Maybe<PrismicStructuredTextTypeFilterInput>;
-};
-
-export type PrismicHomepageConnection = {
-  __typename?: 'PrismicHomepageConnection';
-  totalCount: Scalars['Int'];
-  edges: Array<PrismicHomepageEdge>;
-  nodes: Array<PrismicHomepage>;
-  pageInfo: PageInfo;
-  distinct: Array<Scalars['String']>;
-  group: Array<PrismicHomepageGroupConnection>;
-};
-
-export type PrismicHomepageConnectionDistinctArgs = {
-  field: PrismicHomepageFieldsEnum;
-};
-
-export type PrismicHomepageConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-  field: PrismicHomepageFieldsEnum;
-};
-
-export type PrismicHomepageEdge = {
-  __typename?: 'PrismicHomepageEdge';
-  next?: Maybe<PrismicHomepage>;
-  node: PrismicHomepage;
-  previous?: Maybe<PrismicHomepage>;
-};
-
-export enum PrismicHomepageFieldsEnum {
-  DataTitleHtml = 'data___title___html',
-  DataTitleText = 'data___title___text',
-  DataTitleRaw = 'data___title___raw',
-  DataDescriptionHtml = 'data___description___html',
-  DataDescriptionText = 'data___description___text',
-  DataDescriptionRaw = 'data___description___raw',
-  DataRaw = 'dataRaw',
-  DataString = 'dataString',
-  FirstPublicationDate = 'first_publication_date',
-  Href = 'href',
-  Url = 'url',
-  Lang = 'lang',
-  LastPublicationDate = 'last_publication_date',
-  Tags = 'tags',
-  AlternateLanguages = 'alternate_languages',
-  AlternateLanguagesLinkType = 'alternate_languages___link_type',
-  AlternateLanguagesIsBroken = 'alternate_languages___isBroken',
-  AlternateLanguagesUrl = 'alternate_languages___url',
-  AlternateLanguagesTarget = 'alternate_languages___target',
-  AlternateLanguagesSize = 'alternate_languages___size',
-  AlternateLanguagesId = 'alternate_languages___id',
-  AlternateLanguagesType = 'alternate_languages___type',
-  AlternateLanguagesTags = 'alternate_languages___tags',
-  AlternateLanguagesLang = 'alternate_languages___lang',
-  AlternateLanguagesSlug = 'alternate_languages___slug',
-  AlternateLanguagesUid = 'alternate_languages___uid',
-  AlternateLanguagesRaw = 'alternate_languages___raw',
-  Type = 'type',
-  PrismicId = 'prismicId',
-  Previewable = '_previewable',
-  Id = 'id',
-  ParentId = 'parent___id',
-  ParentParentId = 'parent___parent___id',
-  ParentParentParentId = 'parent___parent___parent___id',
-  ParentParentParentChildren = 'parent___parent___parent___children',
-  ParentParentChildren = 'parent___parent___children',
-  ParentParentChildrenId = 'parent___parent___children___id',
-  ParentParentChildrenChildren = 'parent___parent___children___children',
-  ParentParentInternalContent = 'parent___parent___internal___content',
-  ParentParentInternalContentDigest = 'parent___parent___internal___contentDigest',
-  ParentParentInternalDescription = 'parent___parent___internal___description',
-  ParentParentInternalFieldOwners = 'parent___parent___internal___fieldOwners',
-  ParentParentInternalIgnoreType = 'parent___parent___internal___ignoreType',
-  ParentParentInternalMediaType = 'parent___parent___internal___mediaType',
-  ParentParentInternalOwner = 'parent___parent___internal___owner',
-  ParentParentInternalType = 'parent___parent___internal___type',
-  ParentChildren = 'parent___children',
-  ParentChildrenId = 'parent___children___id',
-  ParentChildrenParentId = 'parent___children___parent___id',
-  ParentChildrenParentChildren = 'parent___children___parent___children',
-  ParentChildrenChildren = 'parent___children___children',
-  ParentChildrenChildrenId = 'parent___children___children___id',
-  ParentChildrenChildrenChildren = 'parent___children___children___children',
-  ParentChildrenInternalContent = 'parent___children___internal___content',
-  ParentChildrenInternalContentDigest = 'parent___children___internal___contentDigest',
-  ParentChildrenInternalDescription = 'parent___children___internal___description',
-  ParentChildrenInternalFieldOwners = 'parent___children___internal___fieldOwners',
-  ParentChildrenInternalIgnoreType = 'parent___children___internal___ignoreType',
-  ParentChildrenInternalMediaType = 'parent___children___internal___mediaType',
-  ParentChildrenInternalOwner = 'parent___children___internal___owner',
-  ParentChildrenInternalType = 'parent___children___internal___type',
-  ParentInternalContent = 'parent___internal___content',
-  ParentInternalContentDigest = 'parent___internal___contentDigest',
-  ParentInternalDescription = 'parent___internal___description',
-  ParentInternalFieldOwners = 'parent___internal___fieldOwners',
-  ParentInternalIgnoreType = 'parent___internal___ignoreType',
-  ParentInternalMediaType = 'parent___internal___mediaType',
-  ParentInternalOwner = 'parent___internal___owner',
-  ParentInternalType = 'parent___internal___type',
-  Children = 'children',
-  ChildrenId = 'children___id',
-  ChildrenParentId = 'children___parent___id',
-  ChildrenParentParentId = 'children___parent___parent___id',
-  ChildrenParentParentChildren = 'children___parent___parent___children',
-  ChildrenParentChildren = 'children___parent___children',
-  ChildrenParentChildrenId = 'children___parent___children___id',
-  ChildrenParentChildrenChildren = 'children___parent___children___children',
-  ChildrenParentInternalContent = 'children___parent___internal___content',
-  ChildrenParentInternalContentDigest = 'children___parent___internal___contentDigest',
-  ChildrenParentInternalDescription = 'children___parent___internal___description',
-  ChildrenParentInternalFieldOwners = 'children___parent___internal___fieldOwners',
-  ChildrenParentInternalIgnoreType = 'children___parent___internal___ignoreType',
-  ChildrenParentInternalMediaType = 'children___parent___internal___mediaType',
-  ChildrenParentInternalOwner = 'children___parent___internal___owner',
-  ChildrenParentInternalType = 'children___parent___internal___type',
-  ChildrenChildren = 'children___children',
-  ChildrenChildrenId = 'children___children___id',
-  ChildrenChildrenParentId = 'children___children___parent___id',
-  ChildrenChildrenParentChildren = 'children___children___parent___children',
-  ChildrenChildrenChildren = 'children___children___children',
-  ChildrenChildrenChildrenId = 'children___children___children___id',
-  ChildrenChildrenChildrenChildren = 'children___children___children___children',
-  ChildrenChildrenInternalContent = 'children___children___internal___content',
-  ChildrenChildrenInternalContentDigest = 'children___children___internal___contentDigest',
-  ChildrenChildrenInternalDescription = 'children___children___internal___description',
-  ChildrenChildrenInternalFieldOwners = 'children___children___internal___fieldOwners',
-  ChildrenChildrenInternalIgnoreType = 'children___children___internal___ignoreType',
-  ChildrenChildrenInternalMediaType = 'children___children___internal___mediaType',
-  ChildrenChildrenInternalOwner = 'children___children___internal___owner',
-  ChildrenChildrenInternalType = 'children___children___internal___type',
-  ChildrenInternalContent = 'children___internal___content',
-  ChildrenInternalContentDigest = 'children___internal___contentDigest',
-  ChildrenInternalDescription = 'children___internal___description',
-  ChildrenInternalFieldOwners = 'children___internal___fieldOwners',
-  ChildrenInternalIgnoreType = 'children___internal___ignoreType',
-  ChildrenInternalMediaType = 'children___internal___mediaType',
-  ChildrenInternalOwner = 'children___internal___owner',
-  ChildrenInternalType = 'children___internal___type',
-  InternalContent = 'internal___content',
-  InternalContentDigest = 'internal___contentDigest',
-  InternalDescription = 'internal___description',
-  InternalFieldOwners = 'internal___fieldOwners',
-  InternalIgnoreType = 'internal___ignoreType',
-  InternalMediaType = 'internal___mediaType',
-  InternalOwner = 'internal___owner',
-  InternalType = 'internal___type',
-}
-
-export type PrismicHomepageGroupConnection = {
-  __typename?: 'PrismicHomepageGroupConnection';
-  totalCount: Scalars['Int'];
-  edges: Array<PrismicHomepageEdge>;
-  nodes: Array<PrismicHomepage>;
-  pageInfo: PageInfo;
-  field: Scalars['String'];
-  fieldValue?: Maybe<Scalars['String']>;
-};
-
-export type PrismicHomepageFilterInput = {
-  data?: Maybe<PrismicHomepageDataTypeFilterInput>;
-  dataRaw?: Maybe<JsonQueryOperatorInput>;
-  dataString?: Maybe<StringQueryOperatorInput>;
-  first_publication_date?: Maybe<DateQueryOperatorInput>;
-  href?: Maybe<StringQueryOperatorInput>;
-  url?: Maybe<StringQueryOperatorInput>;
-  lang?: Maybe<StringQueryOperatorInput>;
-  last_publication_date?: Maybe<DateQueryOperatorInput>;
-  tags?: Maybe<StringQueryOperatorInput>;
-  alternate_languages?: Maybe<PrismicLinkTypeFilterListInput>;
-  type?: Maybe<StringQueryOperatorInput>;
-  prismicId?: Maybe<IdQueryOperatorInput>;
-  _previewable?: Maybe<IdQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-};
-
-export type PrismicHomepageSortInput = {
-  fields?: Maybe<Array<Maybe<PrismicHomepageFieldsEnum>>>;
-  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
-};
-
 export type PrismicArticleDataTypeFilterInput = {
   title?: Maybe<PrismicStructuredTextTypeFilterInput>;
   description?: Maybe<PrismicStructuredTextTypeFilterInput>;
@@ -3833,6 +3100,12 @@ export type PrismicArticleDataTypeFilterInput = {
   jumbotron?: Maybe<BooleanQueryOperatorInput>;
   image?: Maybe<PrismicImageTypeFilterInput>;
   published?: Maybe<DateQueryOperatorInput>;
+};
+
+export type PrismicStructuredTextTypeFilterInput = {
+  html?: Maybe<StringQueryOperatorInput>;
+  text?: Maybe<StringQueryOperatorInput>;
+  raw?: Maybe<JsonQueryOperatorInput>;
 };
 
 export type PrismicImageTypeFilterInput = {
@@ -3877,6 +3150,39 @@ export type PrismicImageThumbnailsTypeQueryOperatorInput = {
   ne?: Maybe<Scalars['PrismicImageThumbnailsType']>;
   in?: Maybe<Array<Maybe<Scalars['PrismicImageThumbnailsType']>>>;
   nin?: Maybe<Array<Maybe<Scalars['PrismicImageThumbnailsType']>>>;
+};
+
+export type PrismicLinkTypeFilterListInput = {
+  elemMatch?: Maybe<PrismicLinkTypeFilterInput>;
+};
+
+export type PrismicLinkTypeFilterInput = {
+  link_type?: Maybe<PrismicLinkTypesQueryOperatorInput>;
+  isBroken?: Maybe<BooleanQueryOperatorInput>;
+  url?: Maybe<StringQueryOperatorInput>;
+  target?: Maybe<StringQueryOperatorInput>;
+  size?: Maybe<IntQueryOperatorInput>;
+  id?: Maybe<IdQueryOperatorInput>;
+  type?: Maybe<StringQueryOperatorInput>;
+  tags?: Maybe<StringQueryOperatorInput>;
+  lang?: Maybe<StringQueryOperatorInput>;
+  slug?: Maybe<StringQueryOperatorInput>;
+  uid?: Maybe<StringQueryOperatorInput>;
+  raw?: Maybe<JsonQueryOperatorInput>;
+};
+
+export type PrismicLinkTypesQueryOperatorInput = {
+  eq?: Maybe<PrismicLinkTypes>;
+  ne?: Maybe<PrismicLinkTypes>;
+  in?: Maybe<Array<Maybe<PrismicLinkTypes>>>;
+  nin?: Maybe<Array<Maybe<PrismicLinkTypes>>>;
+};
+
+export type IdQueryOperatorInput = {
+  eq?: Maybe<Scalars['ID']>;
+  ne?: Maybe<Scalars['ID']>;
+  in?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['ID']>>>;
 };
 
 export type PrismicArticleConnection = {
@@ -4125,6 +3431,312 @@ export type PrismicArticleSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
+export type PrismicHomepageDataFilterInput = {
+  title?: Maybe<PrismicHomepageDataTitleFilterListInput>;
+  description?: Maybe<PrismicHomepageDataDescriptionFilterListInput>;
+  body?: Maybe<PrismicHomepageDataBodyFilterListInput>;
+};
+
+export type PrismicHomepageDataTitleFilterListInput = {
+  elemMatch?: Maybe<PrismicHomepageDataTitleFilterInput>;
+};
+
+export type PrismicHomepageDataTitleFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  text?: Maybe<StringQueryOperatorInput>;
+};
+
+export type PrismicHomepageDataDescriptionFilterListInput = {
+  elemMatch?: Maybe<PrismicHomepageDataDescriptionFilterInput>;
+};
+
+export type PrismicHomepageDataDescriptionFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  text?: Maybe<StringQueryOperatorInput>;
+  spans?: Maybe<PrismicHomepageDataDescriptionSpansFilterListInput>;
+};
+
+export type PrismicHomepageDataDescriptionSpansFilterListInput = {
+  elemMatch?: Maybe<PrismicHomepageDataDescriptionSpansFilterInput>;
+};
+
+export type PrismicHomepageDataDescriptionSpansFilterInput = {
+  start?: Maybe<IntQueryOperatorInput>;
+  end?: Maybe<IntQueryOperatorInput>;
+  type?: Maybe<StringQueryOperatorInput>;
+};
+
+export type PrismicHomepageDataBodyFilterListInput = {
+  elemMatch?: Maybe<PrismicHomepageDataBodyFilterInput>;
+};
+
+export type PrismicHomepageDataBodyFilterInput = {
+  slice_type?: Maybe<StringQueryOperatorInput>;
+  slice_label?: Maybe<StringQueryOperatorInput>;
+  primary?: Maybe<PrismicHomepageDataBodyPrimaryFilterInput>;
+};
+
+export type PrismicHomepageDataBodyPrimaryFilterInput = {
+  product_name?: Maybe<PrismicHomepageDataBodyPrimaryProduct_NameFilterListInput>;
+  product_price?: Maybe<IntQueryOperatorInput>;
+};
+
+export type PrismicHomepageDataBodyPrimaryProduct_NameFilterListInput = {
+  elemMatch?: Maybe<PrismicHomepageDataBodyPrimaryProduct_NameFilterInput>;
+};
+
+export type PrismicHomepageDataBodyPrimaryProduct_NameFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  text?: Maybe<StringQueryOperatorInput>;
+};
+
+export type PrismicHomepageDataRawFilterInput = {
+  title?: Maybe<PrismicHomepageDataRawTitleFilterListInput>;
+  description?: Maybe<PrismicHomepageDataRawDescriptionFilterListInput>;
+  body?: Maybe<PrismicHomepageDataRawBodyFilterListInput>;
+};
+
+export type PrismicHomepageDataRawTitleFilterListInput = {
+  elemMatch?: Maybe<PrismicHomepageDataRawTitleFilterInput>;
+};
+
+export type PrismicHomepageDataRawTitleFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  text?: Maybe<StringQueryOperatorInput>;
+};
+
+export type PrismicHomepageDataRawDescriptionFilterListInput = {
+  elemMatch?: Maybe<PrismicHomepageDataRawDescriptionFilterInput>;
+};
+
+export type PrismicHomepageDataRawDescriptionFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  text?: Maybe<StringQueryOperatorInput>;
+  spans?: Maybe<PrismicHomepageDataRawDescriptionSpansFilterListInput>;
+};
+
+export type PrismicHomepageDataRawDescriptionSpansFilterListInput = {
+  elemMatch?: Maybe<PrismicHomepageDataRawDescriptionSpansFilterInput>;
+};
+
+export type PrismicHomepageDataRawDescriptionSpansFilterInput = {
+  start?: Maybe<IntQueryOperatorInput>;
+  end?: Maybe<IntQueryOperatorInput>;
+  type?: Maybe<StringQueryOperatorInput>;
+};
+
+export type PrismicHomepageDataRawBodyFilterListInput = {
+  elemMatch?: Maybe<PrismicHomepageDataRawBodyFilterInput>;
+};
+
+export type PrismicHomepageDataRawBodyFilterInput = {
+  slice_type?: Maybe<StringQueryOperatorInput>;
+  slice_label?: Maybe<StringQueryOperatorInput>;
+  primary?: Maybe<PrismicHomepageDataRawBodyPrimaryFilterInput>;
+};
+
+export type PrismicHomepageDataRawBodyPrimaryFilterInput = {
+  product_name?: Maybe<PrismicHomepageDataRawBodyPrimaryProduct_NameFilterListInput>;
+  product_price?: Maybe<IntQueryOperatorInput>;
+};
+
+export type PrismicHomepageDataRawBodyPrimaryProduct_NameFilterListInput = {
+  elemMatch?: Maybe<PrismicHomepageDataRawBodyPrimaryProduct_NameFilterInput>;
+};
+
+export type PrismicHomepageDataRawBodyPrimaryProduct_NameFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  text?: Maybe<StringQueryOperatorInput>;
+};
+
+export type PrismicHomepageConnection = {
+  __typename?: 'PrismicHomepageConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<PrismicHomepageEdge>;
+  nodes: Array<PrismicHomepage>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<PrismicHomepageGroupConnection>;
+};
+
+export type PrismicHomepageConnectionDistinctArgs = {
+  field: PrismicHomepageFieldsEnum;
+};
+
+export type PrismicHomepageConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: PrismicHomepageFieldsEnum;
+};
+
+export type PrismicHomepageEdge = {
+  __typename?: 'PrismicHomepageEdge';
+  next?: Maybe<PrismicHomepage>;
+  node: PrismicHomepage;
+  previous?: Maybe<PrismicHomepage>;
+};
+
+export enum PrismicHomepageFieldsEnum {
+  Id = 'id',
+  ParentId = 'parent___id',
+  ParentParentId = 'parent___parent___id',
+  ParentParentParentId = 'parent___parent___parent___id',
+  ParentParentParentChildren = 'parent___parent___parent___children',
+  ParentParentChildren = 'parent___parent___children',
+  ParentParentChildrenId = 'parent___parent___children___id',
+  ParentParentChildrenChildren = 'parent___parent___children___children',
+  ParentParentInternalContent = 'parent___parent___internal___content',
+  ParentParentInternalContentDigest = 'parent___parent___internal___contentDigest',
+  ParentParentInternalDescription = 'parent___parent___internal___description',
+  ParentParentInternalFieldOwners = 'parent___parent___internal___fieldOwners',
+  ParentParentInternalIgnoreType = 'parent___parent___internal___ignoreType',
+  ParentParentInternalMediaType = 'parent___parent___internal___mediaType',
+  ParentParentInternalOwner = 'parent___parent___internal___owner',
+  ParentParentInternalType = 'parent___parent___internal___type',
+  ParentChildren = 'parent___children',
+  ParentChildrenId = 'parent___children___id',
+  ParentChildrenParentId = 'parent___children___parent___id',
+  ParentChildrenParentChildren = 'parent___children___parent___children',
+  ParentChildrenChildren = 'parent___children___children',
+  ParentChildrenChildrenId = 'parent___children___children___id',
+  ParentChildrenChildrenChildren = 'parent___children___children___children',
+  ParentChildrenInternalContent = 'parent___children___internal___content',
+  ParentChildrenInternalContentDigest = 'parent___children___internal___contentDigest',
+  ParentChildrenInternalDescription = 'parent___children___internal___description',
+  ParentChildrenInternalFieldOwners = 'parent___children___internal___fieldOwners',
+  ParentChildrenInternalIgnoreType = 'parent___children___internal___ignoreType',
+  ParentChildrenInternalMediaType = 'parent___children___internal___mediaType',
+  ParentChildrenInternalOwner = 'parent___children___internal___owner',
+  ParentChildrenInternalType = 'parent___children___internal___type',
+  ParentInternalContent = 'parent___internal___content',
+  ParentInternalContentDigest = 'parent___internal___contentDigest',
+  ParentInternalDescription = 'parent___internal___description',
+  ParentInternalFieldOwners = 'parent___internal___fieldOwners',
+  ParentInternalIgnoreType = 'parent___internal___ignoreType',
+  ParentInternalMediaType = 'parent___internal___mediaType',
+  ParentInternalOwner = 'parent___internal___owner',
+  ParentInternalType = 'parent___internal___type',
+  Children = 'children',
+  ChildrenId = 'children___id',
+  ChildrenParentId = 'children___parent___id',
+  ChildrenParentParentId = 'children___parent___parent___id',
+  ChildrenParentParentChildren = 'children___parent___parent___children',
+  ChildrenParentChildren = 'children___parent___children',
+  ChildrenParentChildrenId = 'children___parent___children___id',
+  ChildrenParentChildrenChildren = 'children___parent___children___children',
+  ChildrenParentInternalContent = 'children___parent___internal___content',
+  ChildrenParentInternalContentDigest = 'children___parent___internal___contentDigest',
+  ChildrenParentInternalDescription = 'children___parent___internal___description',
+  ChildrenParentInternalFieldOwners = 'children___parent___internal___fieldOwners',
+  ChildrenParentInternalIgnoreType = 'children___parent___internal___ignoreType',
+  ChildrenParentInternalMediaType = 'children___parent___internal___mediaType',
+  ChildrenParentInternalOwner = 'children___parent___internal___owner',
+  ChildrenParentInternalType = 'children___parent___internal___type',
+  ChildrenChildren = 'children___children',
+  ChildrenChildrenId = 'children___children___id',
+  ChildrenChildrenParentId = 'children___children___parent___id',
+  ChildrenChildrenParentChildren = 'children___children___parent___children',
+  ChildrenChildrenChildren = 'children___children___children',
+  ChildrenChildrenChildrenId = 'children___children___children___id',
+  ChildrenChildrenChildrenChildren = 'children___children___children___children',
+  ChildrenChildrenInternalContent = 'children___children___internal___content',
+  ChildrenChildrenInternalContentDigest = 'children___children___internal___contentDigest',
+  ChildrenChildrenInternalDescription = 'children___children___internal___description',
+  ChildrenChildrenInternalFieldOwners = 'children___children___internal___fieldOwners',
+  ChildrenChildrenInternalIgnoreType = 'children___children___internal___ignoreType',
+  ChildrenChildrenInternalMediaType = 'children___children___internal___mediaType',
+  ChildrenChildrenInternalOwner = 'children___children___internal___owner',
+  ChildrenChildrenInternalType = 'children___children___internal___type',
+  ChildrenInternalContent = 'children___internal___content',
+  ChildrenInternalContentDigest = 'children___internal___contentDigest',
+  ChildrenInternalDescription = 'children___internal___description',
+  ChildrenInternalFieldOwners = 'children___internal___fieldOwners',
+  ChildrenInternalIgnoreType = 'children___internal___ignoreType',
+  ChildrenInternalMediaType = 'children___internal___mediaType',
+  ChildrenInternalOwner = 'children___internal___owner',
+  ChildrenInternalType = 'children___internal___type',
+  InternalContent = 'internal___content',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalDescription = 'internal___description',
+  InternalFieldOwners = 'internal___fieldOwners',
+  InternalIgnoreType = 'internal___ignoreType',
+  InternalMediaType = 'internal___mediaType',
+  InternalOwner = 'internal___owner',
+  InternalType = 'internal___type',
+  Type = 'type',
+  Href = 'href',
+  FirstPublicationDate = 'first_publication_date',
+  LastPublicationDate = 'last_publication_date',
+  Slugs = 'slugs',
+  Lang = 'lang',
+  DataTitle = 'data___title',
+  DataTitleType = 'data___title___type',
+  DataTitleText = 'data___title___text',
+  DataDescription = 'data___description',
+  DataDescriptionType = 'data___description___type',
+  DataDescriptionText = 'data___description___text',
+  DataDescriptionSpans = 'data___description___spans',
+  DataDescriptionSpansStart = 'data___description___spans___start',
+  DataDescriptionSpansEnd = 'data___description___spans___end',
+  DataDescriptionSpansType = 'data___description___spans___type',
+  DataBody = 'data___body',
+  DataBodySliceType = 'data___body___slice_type',
+  DataBodySliceLabel = 'data___body___slice_label',
+  DataBodyPrimaryProductName = 'data___body___primary___product_name',
+  DataBodyPrimaryProductPrice = 'data___body___primary___product_price',
+  PrismicId = 'prismicId',
+  DataString = 'dataString',
+  DataRawTitle = 'dataRaw___title',
+  DataRawTitleType = 'dataRaw___title___type',
+  DataRawTitleText = 'dataRaw___title___text',
+  DataRawDescription = 'dataRaw___description',
+  DataRawDescriptionType = 'dataRaw___description___type',
+  DataRawDescriptionText = 'dataRaw___description___text',
+  DataRawDescriptionSpans = 'dataRaw___description___spans',
+  DataRawDescriptionSpansStart = 'dataRaw___description___spans___start',
+  DataRawDescriptionSpansEnd = 'dataRaw___description___spans___end',
+  DataRawDescriptionSpansType = 'dataRaw___description___spans___type',
+  DataRawBody = 'dataRaw___body',
+  DataRawBodySliceType = 'dataRaw___body___slice_type',
+  DataRawBodySliceLabel = 'dataRaw___body___slice_label',
+  DataRawBodyPrimaryProductName = 'dataRaw___body___primary___product_name',
+  DataRawBodyPrimaryProductPrice = 'dataRaw___body___primary___product_price',
+  Previewable = '_previewable',
+}
+
+export type PrismicHomepageGroupConnection = {
+  __typename?: 'PrismicHomepageGroupConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<PrismicHomepageEdge>;
+  nodes: Array<PrismicHomepage>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type PrismicHomepageFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  type?: Maybe<StringQueryOperatorInput>;
+  href?: Maybe<StringQueryOperatorInput>;
+  first_publication_date?: Maybe<DateQueryOperatorInput>;
+  last_publication_date?: Maybe<DateQueryOperatorInput>;
+  slugs?: Maybe<StringQueryOperatorInput>;
+  lang?: Maybe<StringQueryOperatorInput>;
+  data?: Maybe<PrismicHomepageDataFilterInput>;
+  prismicId?: Maybe<StringQueryOperatorInput>;
+  dataString?: Maybe<StringQueryOperatorInput>;
+  dataRaw?: Maybe<PrismicHomepageDataRawFilterInput>;
+  _previewable?: Maybe<StringQueryOperatorInput>;
+};
+
+export type PrismicHomepageSortInput = {
+  fields?: Maybe<Array<Maybe<PrismicHomepageFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
 export type SiteBuildMetadataConnection = {
   __typename?: 'SiteBuildMetadataConnection';
   totalCount: Scalars['Int'];
@@ -4294,131 +3906,7 @@ export type SitePluginPluginOptionsFilterInput = {
 };
 
 export type SitePluginPluginOptionsSchemasFilterInput = {
-  product?: Maybe<SitePluginPluginOptionsSchemasProductFilterInput>;
-  homepage?: Maybe<SitePluginPluginOptionsSchemasHomepageFilterInput>;
   article?: Maybe<SitePluginPluginOptionsSchemasArticleFilterInput>;
-};
-
-export type SitePluginPluginOptionsSchemasProductFilterInput = {
-  Main?: Maybe<SitePluginPluginOptionsSchemasProductMainFilterInput>;
-};
-
-export type SitePluginPluginOptionsSchemasProductMainFilterInput = {
-  uid?: Maybe<SitePluginPluginOptionsSchemasProductMainUidFilterInput>;
-  name?: Maybe<SitePluginPluginOptionsSchemasProductMainNameFilterInput>;
-};
-
-export type SitePluginPluginOptionsSchemasProductMainUidFilterInput = {
-  type?: Maybe<StringQueryOperatorInput>;
-  config?: Maybe<SitePluginPluginOptionsSchemasProductMainUidConfigFilterInput>;
-};
-
-export type SitePluginPluginOptionsSchemasProductMainUidConfigFilterInput = {
-  label?: Maybe<StringQueryOperatorInput>;
-  placeholder?: Maybe<StringQueryOperatorInput>;
-};
-
-export type SitePluginPluginOptionsSchemasProductMainNameFilterInput = {
-  type?: Maybe<StringQueryOperatorInput>;
-  config?: Maybe<SitePluginPluginOptionsSchemasProductMainNameConfigFilterInput>;
-};
-
-export type SitePluginPluginOptionsSchemasProductMainNameConfigFilterInput = {
-  label?: Maybe<StringQueryOperatorInput>;
-  placeholder?: Maybe<StringQueryOperatorInput>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageFilterInput = {
-  Main?: Maybe<SitePluginPluginOptionsSchemasHomepageMainFilterInput>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainFilterInput = {
-  title?: Maybe<SitePluginPluginOptionsSchemasHomepageMainTitleFilterInput>;
-  description?: Maybe<SitePluginPluginOptionsSchemasHomepageMainDescriptionFilterInput>;
-  body?: Maybe<SitePluginPluginOptionsSchemasHomepageMainBodyFilterInput>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainTitleFilterInput = {
-  type?: Maybe<StringQueryOperatorInput>;
-  config?: Maybe<SitePluginPluginOptionsSchemasHomepageMainTitleConfigFilterInput>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainTitleConfigFilterInput = {
-  single?: Maybe<StringQueryOperatorInput>;
-  label?: Maybe<StringQueryOperatorInput>;
-  placeholder?: Maybe<StringQueryOperatorInput>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainDescriptionFilterInput = {
-  type?: Maybe<StringQueryOperatorInput>;
-  config?: Maybe<SitePluginPluginOptionsSchemasHomepageMainDescriptionConfigFilterInput>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainDescriptionConfigFilterInput = {
-  multi?: Maybe<StringQueryOperatorInput>;
-  label?: Maybe<StringQueryOperatorInput>;
-  placeholder?: Maybe<StringQueryOperatorInput>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainBodyFilterInput = {
-  type?: Maybe<StringQueryOperatorInput>;
-  fieldset?: Maybe<StringQueryOperatorInput>;
-  config?: Maybe<SitePluginPluginOptionsSchemasHomepageMainBodyConfigFilterInput>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainBodyConfigFilterInput = {
-  labels?: Maybe<SitePluginPluginOptionsSchemasHomepageMainBodyConfigLabelsFilterInput>;
-  choices?: Maybe<SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesFilterInput>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainBodyConfigLabelsFilterInput = {
-  product?: Maybe<SitePluginPluginOptionsSchemasHomepageMainBodyConfigLabelsProductFilterListInput>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainBodyConfigLabelsProductFilterListInput = {
-  elemMatch?: Maybe<SitePluginPluginOptionsSchemasHomepageMainBodyConfigLabelsProductFilterInput>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainBodyConfigLabelsProductFilterInput = {
-  name?: Maybe<StringQueryOperatorInput>;
-  display?: Maybe<StringQueryOperatorInput>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesFilterInput = {
-  product?: Maybe<SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductFilterInput>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductFilterInput = {
-  type?: Maybe<StringQueryOperatorInput>;
-  fieldset?: Maybe<StringQueryOperatorInput>;
-  description?: Maybe<StringQueryOperatorInput>;
-  icon?: Maybe<StringQueryOperatorInput>;
-  non_repeat?: Maybe<SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_RepeatFilterInput>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_RepeatFilterInput = {
-  product_name?: Maybe<SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_RepeatProduct_NameFilterInput>;
-  product_price?: Maybe<SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_RepeatProduct_PriceFilterInput>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_RepeatProduct_NameFilterInput = {
-  type?: Maybe<StringQueryOperatorInput>;
-  config?: Maybe<SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_RepeatProduct_NameConfigFilterInput>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_RepeatProduct_NameConfigFilterInput = {
-  single?: Maybe<StringQueryOperatorInput>;
-  label?: Maybe<StringQueryOperatorInput>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_RepeatProduct_PriceFilterInput = {
-  type?: Maybe<StringQueryOperatorInput>;
-  config?: Maybe<SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_RepeatProduct_PriceConfigFilterInput>;
-};
-
-export type SitePluginPluginOptionsSchemasHomepageMainBodyConfigChoicesProductNon_RepeatProduct_PriceConfigFilterInput = {
-  label?: Maybe<StringQueryOperatorInput>;
-  placeholder?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsSchemasArticleFilterInput = {
@@ -4738,6 +4226,24 @@ export type SitePluginSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
+export type GetDashboardDataQueryVariables = Exact<{ [key: string]: never }>;
+
+export type GetDashboardDataQuery = { __typename?: 'Query' } & {
+  logo?: Maybe<
+    { __typename?: 'File' } & {
+      childrenImageSharp?: Maybe<
+        Array<
+          Maybe<
+            { __typename?: 'ImageSharp' } & {
+              fluid?: Maybe<{ __typename?: 'ImageSharpFluid' } & FileImageSharpFluidFragment>;
+            }
+          >
+        >
+      >;
+    }
+  >;
+};
+
 export type GetHomeDataQueryVariables = Exact<{ [key: string]: never }>;
 
 export type GetHomeDataQuery = { __typename?: 'Query' } & {
@@ -4773,6 +4279,29 @@ export type GetHomeDataQuery = { __typename?: 'Query' } & {
         }
     >;
   };
+  logo?: Maybe<
+    { __typename?: 'File' } & {
+      childrenImageSharp?: Maybe<
+        Array<
+          Maybe<
+            { __typename?: 'ImageSharp' } & {
+              fluid?: Maybe<{ __typename?: 'ImageSharpFluid' } & FileImageSharpFluidFragment>;
+            }
+          >
+        >
+      >;
+    }
+  >;
+  site?: Maybe<
+    { __typename?: 'Site' } & {
+      siteMetadata?: Maybe<{ __typename?: 'SiteSiteMetadata' } & SiteMetadataFieldsFragment>;
+    }
+  >;
+};
+
+export type GetLoginDataQueryVariables = Exact<{ [key: string]: never }>;
+
+export type GetLoginDataQuery = { __typename?: 'Query' } & {
   logo?: Maybe<
     { __typename?: 'File' } & {
       childrenImageSharp?: Maybe<
