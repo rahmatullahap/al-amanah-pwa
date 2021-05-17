@@ -22,7 +22,7 @@ class Home extends React.Component<PageProps<GetHomeDataQuery>> {
         title: 'Madrasah',
       },
       {
-        title: 'DKM Al Amanah',
+        title: 'DKM Al-Amanah',
       },
       {
         title: 'Majelis Taklim',

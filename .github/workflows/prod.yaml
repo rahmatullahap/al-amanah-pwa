@@ -32,5 +32,7 @@ jobs:
             KV_NAMESPACE_ID="1f32a903be6e4c96800378ce96298f09"
             LOG_LEVEL="info"
             SITE_ASSETS_DIR="./public"
+            PRISMIC_REPO_NAME=prntdst-gatsby-porto
+            PRISMIC_ACCESS_TOKEN="${{ secrets.PRISMIC_ACCESS_TOKEN }}"
       - run: npm run build
       - run: npm run deploy
