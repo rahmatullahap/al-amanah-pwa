@@ -19,12 +19,12 @@ const BaseLayout: React.FC<BaseProps> = ({ logo, menu = true, children }) => {
     <div>
       <Helmet>
         <link
-          href="http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext"
+          href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext"
           rel="stylesheet"
           type="text/css"
         />
         {/* <link href="/styles/fonts.css" rel="stylesheet" /> */}
-        <link href="http://fonts.cdnfonts.com/css/candela" rel="stylesheet" />
+        <link href="https://fonts.cdnfonts.com/css/candela" rel="stylesheet" />
       </Helmet>
       {menu ? (
         <Header logo={logo} />
