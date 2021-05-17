@@ -8,13 +8,7 @@ jobs:
   build:
     name: build
     runs-on: ubuntu-latest
-    env:
-      SENTRY_DISABLED: true
     steps:
-      - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.GH_PAT }}
-          submodules: recursive
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
