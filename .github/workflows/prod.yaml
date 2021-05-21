@@ -3,6 +3,9 @@ name: prod
 on:
   push:
     branches: [master]
+  repository_dispatch:
+    types: 
+      - webhook-prismic
 
 jobs:
   build:
