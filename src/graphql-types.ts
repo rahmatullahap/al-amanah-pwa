@@ -1502,6 +1502,21 @@ export type SitePluginPluginOptions = {
   id?: Maybe<Scalars['String']>;
   includeInDevelopment?: Maybe<Scalars['Boolean']>;
   routeChangeEventName?: Maybe<Scalars['String']>;
+  short_name?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  lang?: Maybe<Scalars['String']>;
+  display?: Maybe<Scalars['String']>;
+  icon?: Maybe<Scalars['String']>;
+  start_url?: Maybe<Scalars['String']>;
+  background_color?: Maybe<Scalars['String']>;
+  theme_color?: Maybe<Scalars['String']>;
+  icons?: Maybe<Array<Maybe<SitePluginPluginOptionsIcons>>>;
+  legacy?: Maybe<Scalars['Boolean']>;
+  theme_color_in_head?: Maybe<Scalars['Boolean']>;
+  cache_busting_mode?: Maybe<Scalars['String']>;
+  crossOrigin?: Maybe<Scalars['String']>;
+  include_favicon?: Maybe<Scalars['Boolean']>;
+  cacheDigest?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
@@ -1609,6 +1624,13 @@ export type SitePluginPluginOptionsSchemasArticleMainPublished = {
 export type SitePluginPluginOptionsSchemasArticleMainPublishedConfig = {
   __typename?: 'SitePluginPluginOptionsSchemasArticleMainPublishedConfig';
   label?: Maybe<Scalars['String']>;
+};
+
+export type SitePluginPluginOptionsIcons = {
+  __typename?: 'SitePluginPluginOptionsIcons';
+  src?: Maybe<Scalars['String']>;
+  sizes?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
 };
 
 export type SitePluginPackageJson = {
@@ -3902,6 +3924,21 @@ export type SitePluginPluginOptionsFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
   includeInDevelopment?: Maybe<BooleanQueryOperatorInput>;
   routeChangeEventName?: Maybe<StringQueryOperatorInput>;
+  short_name?: Maybe<StringQueryOperatorInput>;
+  description?: Maybe<StringQueryOperatorInput>;
+  lang?: Maybe<StringQueryOperatorInput>;
+  display?: Maybe<StringQueryOperatorInput>;
+  icon?: Maybe<StringQueryOperatorInput>;
+  start_url?: Maybe<StringQueryOperatorInput>;
+  background_color?: Maybe<StringQueryOperatorInput>;
+  theme_color?: Maybe<StringQueryOperatorInput>;
+  icons?: Maybe<SitePluginPluginOptionsIconsFilterListInput>;
+  legacy?: Maybe<BooleanQueryOperatorInput>;
+  theme_color_in_head?: Maybe<BooleanQueryOperatorInput>;
+  cache_busting_mode?: Maybe<StringQueryOperatorInput>;
+  crossOrigin?: Maybe<StringQueryOperatorInput>;
+  include_favicon?: Maybe<BooleanQueryOperatorInput>;
+  cacheDigest?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
 
@@ -3992,6 +4029,16 @@ export type SitePluginPluginOptionsSchemasArticleMainPublishedFilterInput = {
 
 export type SitePluginPluginOptionsSchemasArticleMainPublishedConfigFilterInput = {
   label?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePluginPluginOptionsIconsFilterListInput = {
+  elemMatch?: Maybe<SitePluginPluginOptionsIconsFilterInput>;
+};
+
+export type SitePluginPluginOptionsIconsFilterInput = {
+  src?: Maybe<StringQueryOperatorInput>;
+  sizes?: Maybe<StringQueryOperatorInput>;
+  type?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginPackageJsonFilterInput = {
@@ -4173,6 +4220,24 @@ export enum SitePluginFieldsEnum {
   PluginOptionsId = 'pluginOptions___id',
   PluginOptionsIncludeInDevelopment = 'pluginOptions___includeInDevelopment',
   PluginOptionsRouteChangeEventName = 'pluginOptions___routeChangeEventName',
+  PluginOptionsShortName = 'pluginOptions___short_name',
+  PluginOptionsDescription = 'pluginOptions___description',
+  PluginOptionsLang = 'pluginOptions___lang',
+  PluginOptionsDisplay = 'pluginOptions___display',
+  PluginOptionsIcon = 'pluginOptions___icon',
+  PluginOptionsStartUrl = 'pluginOptions___start_url',
+  PluginOptionsBackgroundColor = 'pluginOptions___background_color',
+  PluginOptionsThemeColor = 'pluginOptions___theme_color',
+  PluginOptionsIcons = 'pluginOptions___icons',
+  PluginOptionsIconsSrc = 'pluginOptions___icons___src',
+  PluginOptionsIconsSizes = 'pluginOptions___icons___sizes',
+  PluginOptionsIconsType = 'pluginOptions___icons___type',
+  PluginOptionsLegacy = 'pluginOptions___legacy',
+  PluginOptionsThemeColorInHead = 'pluginOptions___theme_color_in_head',
+  PluginOptionsCacheBustingMode = 'pluginOptions___cache_busting_mode',
+  PluginOptionsCrossOrigin = 'pluginOptions___crossOrigin',
+  PluginOptionsIncludeFavicon = 'pluginOptions___include_favicon',
+  PluginOptionsCacheDigest = 'pluginOptions___cacheDigest',
   PluginOptionsPathCheck = 'pluginOptions___pathCheck',
   NodeApIs = 'nodeAPIs',
   BrowserApIs = 'browserAPIs',
@@ -4381,7 +4446,7 @@ export type GetPageQuery = { __typename?: 'Query' } & {
 
 export type SiteMetadataFieldsFragment = { __typename?: 'SiteSiteMetadata' } & Pick<
   SiteSiteMetadata,
-  'title' | 'description' | 'url' | 'siteUrl' | 'image' | 'logo'
+  'title' | 'description' | 'url' | 'siteUrl' | 'logo'
 >;
 
 type PrismicImageFields_PrismicImageType_Fragment = { __typename?: 'PrismicImageType' } & Pick<

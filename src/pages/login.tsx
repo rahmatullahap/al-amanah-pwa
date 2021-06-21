@@ -14,16 +14,34 @@ import {
   Input,
 } from '@material-ui/core';
 import Img, { FluidObject } from 'gatsby-image';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 
 export const Atag = tw.a``;
 
 const Login: React.FC<PageProps<GetLoginDataQuery>> = ({ data }) => {
   const logo = data?.logo?.childrenImageSharp[0]?.fluid;
 
+  const schema = yup.object().shape({
+    username: yup.string().required('Username is required'),
+    password: yup.string().required('Password is required'),
+  });
+  const { register, handleSubmit } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = data => console.log(data);
+
   return (
     <div>
       <Helmet>
         <title>Yayasan Al Amanah - Login</title>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+        />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
       </Helmet>
       <section>
         <div tw="container my-20">
@@ -55,20 +73,28 @@ const Login: React.FC<PageProps<GetLoginDataQuery>> = ({ data }) => {
             <CardContent>
               <FormControl fullWidth={true}>
                 <InputLabel htmlFor="username">Username</InputLabel>
-                <Input id="username" aria-describedby="my-helper-text" />
+                <Input {...register('firstName')} id="username" aria-describedby="username" />
               </FormControl>
               <br />
               <FormControl fullWidth={true}>
                 <InputLabel htmlFor="password">Password</InputLabel>
-                <Input type="password" id="password" aria-describedby="my-helper-text" />
+                <Input
+                  {...register('password')}
+                  type="password"
+                  id="password"
+                  aria-describedby="password"
+                />
               </FormControl>
             </CardContent>
             <CardActions tw="flex justify-end">
-              <Link to="/admin/dashboard" aria-label="login">
-                <Button variant="contained" size="large" color="primary">
-                  Login
-                </Button>
-              </Link>
+              <Button
+                onClick={handleSubmit(onSubmit)}
+                variant="contained"
+                size="large"
+                color="primary"
+              >
+                Login
+              </Button>
             </CardActions>
           </Card>
         </div>

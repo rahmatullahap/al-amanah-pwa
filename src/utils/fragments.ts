@@ -7,7 +7,6 @@ export const siteMetadataFields = graphql`
     description
     url
     siteUrl
-    image
     logo
   }
 `;

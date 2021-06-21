@@ -33,6 +33,10 @@ module.exports = {
         showSpinner: false,
       },
     },
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {},
+    },
     // data source
     {
       resolve: 'gatsby-source-filesystem',
@@ -41,12 +45,7 @@ module.exports = {
         path: `${__dirname}/src/content/`,
       },
     },
-    // {
-    //   resolve: 'gatsby-source-wordpress',
-    //   options: {
-    //     url: process.env.WPGRAPHQL_URL,
-    //   },
-    // },
+    `gatsby-plugin-offline`,
     {
       resolve: 'gatsby-source-prismic',
       options: {
@@ -67,6 +66,32 @@ module.exports = {
         id: process.env.GTM_ID,
         includeInDevelopment: false,
         routeChangeEventName: 'page-route-changed',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Al Amanah`,
+        short_name: `Al Amanah`,
+        description: `Yayasan Al Amanah`,
+        lang: `en`,
+        display: `standalone`,
+        icon: `src/content/images/logo.png`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#fff`,
+        icons: [
+          {
+            src: `/static/images/logo.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `/static/images/logo.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ], // Add or remove icon sizes as desired
       },
     },
   ],

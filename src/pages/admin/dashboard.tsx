@@ -1,9 +1,11 @@
 import { graphql, PageProps } from 'gatsby';
+import React from 'react';
 // import tw from 'twin.macro';
 // import { css } from '@emotion/react';
 import AdminLayout from '../../layouts/admin';
 import { GetDashboardDataQuery } from '../../graphql-types';
 import { Helmet } from 'react-helmet';
+// import { Drawer } from '@material-ui/core';
 
 const Dashboard: React.FC<PageProps<GetDashboardDataQuery>> = ({ data }) => {
   const logo = data?.logo?.childrenImageSharp[0]?.fluid;
